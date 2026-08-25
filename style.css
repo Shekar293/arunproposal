@@ -1,0 +1,290 @@
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Georgia', serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+/* ===== Floating Hearts Background ===== */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 24px;
+    animation: floatUp linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ===== Proposal Card ===== */
+.card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(255, 105, 180, 0.35);
+    max-width: 520px;
+    width: 100%;
+    padding: 40px 35px;
+    text-align: center;
+    animation: cardPop 0.8s ease-out;
+}
+
+@keyframes cardPop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ===== Photo Frame ===== */
+.photo-frame {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #ff6b9d;
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+    margin-bottom: 25px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffe0ec, #ffc2d6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photo-placeholder {
+    text-align: center;
+    color: #ff6b9d;
+}
+
+.photo-emoji {
+    font-size: 50px;
+    display: block;
+}
+
+.photo-hint {
+    font-size: 11px;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* ===== Text ===== */
+.title {
+    font-size: 32px;
+    color: #ff4d88;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+    text-shadow: 1px 1px 2px rgba(255, 77, 136, 0.2);
+}
+
+.message {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 18px;
+    font-style: italic;
+}
+
+.question {
+    font-size: 26px;
+    color: #ff4d88;
+    margin: 25px 0 30px;
+    font-family: 'Georgia', serif;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.signature {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #ff8fb3;
+    font-style: italic;
+}
+
+/* ===== Buttons ===== */
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    border-radius: 50px;
+    padding: 14px 35px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.btn-yes {
+    background: linear-gradient(135deg, #ff6b9d, #ff4d88);
+    color: white;
+    box-shadow: 0 6px 20px rgba(255, 77, 136, 0.4);
+}
+
+.btn-yes:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255, 77, 136, 0.6);
+}
+
+.btn-no {
+    background: #f0f0f0;
+    color: #999;
+    position: relative;
+}
+
+.btn-no:hover {
+    transform: scale(0.95);
+}
+
+/* ===== Celebration Overlay ===== */
+.celebration {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6b9d, #ff4d88, #ff8fb3);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    text-align: center;
+    padding: 20px;
+}
+
+.celebration.show {
+    display: flex;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.celebration-content {
+    color: white;
+    max-width: 500px;
+}
+
+.celebration-title {
+    font-size: 48px;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.celebration-message {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.big-heart {
+    font-size: 60px;
+    display: inline-block;
+    animation: beat 1s ease-in-out infinite;
+}
+
+@keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.btn-replay {
+    background: white;
+    color: #ff4d88;
+    margin-top: 10px;
+}
+
+.btn-replay:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Confetti Canvas ===== */
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 11;
+    display: none;
+}
+
+#confettiCanvas.show {
+    display: block;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+    .card {
+        padding: 30px 20px;
+    }
+    .title {
+        font-size: 26px;
+    }
+    .question {
+        font-size: 22px;
+    }
+    .celebration-title {
+        font-size: 36px;
+    }
+    .btn {
+        padding: 12px 28px;
+        font-size: 16px;
+    }
+}
