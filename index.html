@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Main proposal card -->
+    <div class="card" id="proposalCard">
+        <div class="card-inner">
+            <div class="photo-frame">
+                <div class="photo-placeholder">
+                    <span class="photo-emoji">💑</span>
+                    <p class="photo-hint">Add your photo here</p>
+                </div>
+            </div>
+
+            <h1 class="title">Hey shardhuuu ❤️</h1>
+
+            <p class="message">
+                From the moment you came into my life, everything changed for the better.
+                Your smile lights up my world, and your laugh is my favorite sound.
+                Every day with you feels like a blessing, and I can't imagine my life without you.
+            </p>
+
+            <p class="message">
+                So I have one very important question to ask you...
+            </p>
+
+            <h2 class="question">Will you be my girlfriend? 💍</h2>
+
+            <div class="buttons">
+                <button class="btn btn-yes" id="yesBtn">Yes! 💖</button>
+                <button class="btn btn-no" id="noBtn">No 😢</button>
+            </div>
+
+            <p class="signature">— With all my love, forever yours</p>
+        </div>
+    </div>
+
+    <!-- Celebration overlay (shown when she says Yes) -->
+    <div class="celebration" id="celebration">
+        <div class="celebration-content">
+            <h1 class="celebration-title">YAYYY! 🎉💖</h1>
+            <p class="celebration-message">
+                You just made me the happiest person in the world!<br>
+                I promise to love you, cherish you, and make you smile every single day.<br><br>
+                <span class="big-heart">❤️</span><br>
+                You + Me = Forever
+            </p>
+            <button class="btn btn-replay" id="replayBtn">Replay 💕</button>
+        </div>
+    </div>
+
+    <!-- Confetti canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
